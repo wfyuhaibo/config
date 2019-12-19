@@ -14,7 +14,7 @@ spring:
       - id: pmsconfigclient
         uri: lb://pmsconfigclient
         predicates:
-        - Path= /**/**
+        - Path= /client/**
   kafka:
     bootstrap-servers: afkafka.com:9092
 
