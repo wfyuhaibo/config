@@ -7,3 +7,5 @@ spring:
         enabled: true
   kafka:
     bootstrap-servers: afkafka.com:9092
+
+test=1
