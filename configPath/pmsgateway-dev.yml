@@ -8,4 +8,4 @@ spring:
   kafka:
     bootstrap-servers: afkafka.com:9092
 
-test=1
+test: 1
