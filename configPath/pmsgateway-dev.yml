@@ -5,6 +5,16 @@ spring:
       enabled: true
       trace:
         enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+      - id: pmsconfigclient
+        uri: lb://pmsconfigclient
+        predicates:
+        - Path= /client/**
   kafka:
     bootstrap-servers: afkafka.com:9092
 
