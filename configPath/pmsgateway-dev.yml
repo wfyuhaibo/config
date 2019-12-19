@@ -12,7 +12,7 @@ spring:
           lower-case-service-id: true
       routes:
       - id: pmsconfigclient
-        uri: lb://pmsconfigclient
+        uri: lb://client
         predicates:
         - Path= /client/**
   kafka:
