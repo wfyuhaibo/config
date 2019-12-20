@@ -17,5 +17,3 @@ spring:
         - Path= /client/**
   kafka:
     bootstrap-servers: afkafka.com:9092
-
-test: 1
