@@ -23,9 +23,9 @@ spring:
         min-idle: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-uf6hev14alroggj6x88270.mysql.rds.aliyuncs.com:3306/authdb?useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: afauth
-    password: af@auth123
+    url: jdbc:mysql://127.0.0.1:3306/authdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
   druid:
     initialSize: 5 #初始化连接大小
     minIdle: 5     #最小连接池数量
