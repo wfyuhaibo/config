@@ -1,0 +1,9 @@
+#链接kafka
+spring:
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  kafka:
+    bootstrap-servers: afkafka.com:9092
