@@ -15,6 +15,10 @@ spring:
         uri: lb://pmsconfigclient
         predicates:
         - Path= /client/**
+      - id: pmsauth
+        uri: lb://pmsauth
+        predicates:
+        - Path= /auth/**
   kafka:
     bootstrap-servers: afkafka.com:9092
     
