@@ -21,3 +21,9 @@ spring:
       - Path= /auth/**
   kafka:
     bootstrap-servers: afkafka.com:9092
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:9004/auth/oauth/token
+      user-authorization-uri: http://localhost:9004/auth/oauth/authorize
+      id: web
