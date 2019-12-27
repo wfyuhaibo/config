@@ -2,6 +2,6 @@ test: test11
 security:
   oauth2:
     resource:
-      id: eshop-member
+      id: pmsauth
       user-info-uri: http://localhost:9004/auth/api/member
       prefer-token-info: false
