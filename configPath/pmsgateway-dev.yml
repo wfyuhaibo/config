@@ -21,6 +21,9 @@ spring:
       - Path= /auth/**
   kafka:
     bootstrap-servers: afkafka.com:9092
+    
+
+#---------------------OAuth2---------------------
 security:
   oauth2:
     client:
@@ -30,3 +33,21 @@ security:
     resource:
       user-info-uri: http://localhost:9004/auth/api/member
       prefer-token-info: false
+
+#----------------------超时配置-------------------
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3500
