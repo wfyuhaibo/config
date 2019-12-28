@@ -27,11 +27,11 @@ spring:
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:9004/auth/oauth/token
-      user-authorization-uri: http://localhost:9004/auth/oauth/authorize
+      access-token-uri: http://localhost:9005/oauth/token
+      user-authorization-uri: http://localhost:9005/oauth/authorize
       id: web
     resource:
-      user-info-uri: http://localhost:9004/auth/api/member
+      user-info-uri: http://localhost:9005/auth/api/member
       prefer-token-info: false
 
 #----------------------超时配置-------------------
