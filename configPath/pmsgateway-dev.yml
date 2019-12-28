@@ -42,4 +42,8 @@ ribbon:
   MaxAutoRetriesNextServer: 2
   eureka:
     enabled: true
+    
+white: 
+  ips: 
+    list: 127.0.0.1,0:0:0:0:0:0:0:1
 
