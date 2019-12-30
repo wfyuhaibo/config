@@ -10,7 +10,7 @@ spring:
     
 zuul: 
   retryable: false
-  ignoredServices: *
+  ignoredServices: "*"
   host: 
     connect-timeout-millis: 3000
     socket-timeout-millis: 3000
@@ -21,11 +21,11 @@ zuul:
     pmsauth: 
       path: /auth/**
       serviceId: pmsauth
-      sensitiveHeaders: *
+      sensitiveHeaders: "*"
     pmsconfigclient: 
       path: /client/**
       serviceId: pmsconfigclient
-      sensitiveHeaders: *  
+      sensitiveHeaders: "*"  
 
 #---------------------OAuth2---------------------
 security:
