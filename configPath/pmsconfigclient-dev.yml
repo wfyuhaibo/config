@@ -3,5 +3,5 @@ security:
   oauth2:
     resource:
       id: pmsconfigclient
-      user-info-uri: http://localhost:9004/auth/api/member
+      user-info-uri: http://localhost:9004/auth/api/user
       prefer-token-info: false
