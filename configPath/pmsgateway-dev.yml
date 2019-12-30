@@ -5,27 +5,23 @@ spring:
       enabled: true
       trace:
         enabled: true
-    gateway:
-      discovery:
-        locator:
-          enabled: false
-          lower-case-service-id: true
-      routes:
-      - id: pmsconfigclient
-        uri: lb://pmsconfigclient
-        predicates:
-        - Path= /client/**
-        filters:
-        -   StripPrefix=1
-      - id: pmsauth
-        uri: lb://pmsauth
-        predicates:
-        - Path= /auth/**
-        filters:
-        -   StripPrefix=1
   kafka:
     bootstrap-servers: afkafka.com:9092
     
+zuul: 
+  retryable: false
+  ignoredServices: *
+  routes: 
+    fungame-pay-api:
+      stripPrefix: false
+    pmsauth: 
+      path: /auth/**
+      serviceId: pmsauth
+      sensitiveHeaders: *
+    pmsconfigclient: 
+      path: /client/**
+      serviceId: pmsconfigclient
+      sensitiveHeaders: *  
 
 #---------------------OAuth2---------------------
 security:
