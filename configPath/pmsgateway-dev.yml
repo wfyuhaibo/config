@@ -11,6 +11,10 @@ spring:
 zuul: 
   retryable: false
   ignoredServices: *
+  host: 
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+  add-proxy-headers: true
   routes: 
     fungame-pay-api:
       stripPrefix: false
