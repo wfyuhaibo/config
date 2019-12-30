@@ -1,14 +1,22 @@
 #链接bus-kafka
-spring.cloud.bus.enabled=true
-spring.kafka.bootstrap-servers=afkafka.com:9092
-spring.cloud.bus.trace.enabled=true
-
+spring: 
+  cloud: 
+    bus: 
+      enabled: true
+    trace: 
+      enabled: true
 ##########stream 消息驱动配置##########
 ##########stream 消息发送输出通道配置##########
-spring.cloud.stream.bindings.iot_output.destination=iot-push-message-topic
-spring.cloud.stream.bindings.iot_output.content-type=text/plain
+    stream: 
+      bindings: 
+        iot_output: 
+          destination: iot-push-message-topic
+          content-type: text/plain
 ###iot 烟感消息###
-spring.cloud.stream.bindings.iot_smokealarm_output.destination=iot-push-smokealarm-message-topic
-spring.cloud.stream.bindings.iot_smokealarm_output.content-type=text/plain
+        iot_smokealarm_output: 
+          destination: iot-push-smokealarm-message-topic
+          content-type: text/plain
+  kafka: 
+    bootstrap-servers: afkafka.com:9092
 
-spring.cloud.stream.kafka.binder.brokers=afkafka.com:9092
+
