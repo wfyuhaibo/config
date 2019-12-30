@@ -10,10 +10,10 @@ spring:
     stream: 
       bindings: 
         output_one: 
-          destination: iot-push-message-topic
+          destination: output_one
           content-type: text/plain
         output_two: 
-          destination: iot-push-smokealarm-message-topic
+          destination: output_two
           content-type: text/plain
   kafka: 
     bootstrap-servers: afkafka.com:9092
