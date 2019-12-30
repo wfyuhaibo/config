@@ -9,11 +9,10 @@ spring:
 ##########stream 消息发送输出通道配置##########
     stream: 
       bindings: 
-        iot_output: 
+        output_one: 
           destination: iot-push-message-topic
           content-type: text/plain
-###iot 烟感消息###
-        iot_smokealarm_output: 
+        output_two: 
           destination: iot-push-smokealarm-message-topic
           content-type: text/plain
   kafka: 
