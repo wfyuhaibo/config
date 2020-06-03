@@ -1,16 +1,4 @@
-server:
-  port: 9005
-
 spring:
-  application:
-    name: pmsauth
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true
-  kafka:
-    bootstrap-servers: afkafka.com:9092
   redis:
     database: 0
     host: 127.0.0.1
@@ -23,7 +11,7 @@ spring:
         min-idle: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/authdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/authdb?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
   druid:
@@ -41,10 +29,24 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20 #开启poolPreparedStatements后生效
     filters: stat,wall,log4j #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
     connectionProperties: 'druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000' #通过connectProperties属性来打开mergeSql功能;慢SQL记录
-  jpa:
-    hibernate:
-      ddl-auto: update
-      show-sql: true
+
+mybatis-plus:
+  #xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath*:/mybatis/*.xml
+  configuration:
+    #懒加载
+    aggressive-lazy-loading: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      #表名下划线命名默认true
+      table-underline: true
+      #id类型
+      id-type: auto
+      #数据库类型
+      db-type: mysql
       
 eureka:
   instance:
