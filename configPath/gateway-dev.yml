@@ -1,3 +1,12 @@
+spring:
+    cloud:
+        bus:
+            enabled: true
+            trace:
+                enabled: true
+    kafka:
+        bootstrap-servers: localhost:9092
+        
 ribbon:
   ConnectTimeout: 25000
   ReadTimeout: 25000
